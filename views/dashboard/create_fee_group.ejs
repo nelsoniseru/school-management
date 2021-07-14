@@ -1,0 +1,46 @@
+<ul>
+
+<%items.forEach(e=>{%>
+
+        <li>  <input class="form-check-input" name="checks1" type="checkbox" id="inlineCheckbox1" value="school_fees <%=e.school_fee%>"><label for="inlineCheckbox1">school fees: <%=e.school_fee%></label</li>
+        <li>   <input class="form-check-input" name="checks2" type="checkbox" id="inlineCheckbox2" value="option1">bus to and fro:<%=e.bus_fee_to_and_fro%></li>
+        <li>
+            <input class="form-check-input" name="checks3" type="checkbox" id="inlineCheckbox3" value="bus one way: <%=e.bus_fee_one_way%>">
+            <label>bus one way: <%=e.bus_fee_one_way%></label></li>
+        <li>
+            <input class="form-check-input" name="checks4" type="checkbox" id="inlineCheckbox4" value="boarding fee: <%=e.boarding_fee%>">
+
+            <label>boarding fee: <%=e.boarding_fee%></label></li>
+        <li>
+            <input class="form-check-input" name="checks5" type="checkbox" id="inlineCheckbox5" value="waec fee: <%=e.waec_fee%>">
+
+           <label> waec fee: <%=e.waec_fee%></label>
+        </li>
+
+        <li>
+            <input class="form-check-input" name="checks6" type="checkbox" id="inlineCheckbox6" value="graduation fee: <%=e.graduation_fee%>">
+            <label>graduation fee: <%=e.graduation_fee%></label>
+        </li>
+  
+ 
+      
+<%})%>
+</ul>
+<script>
+  $(document).ready(function(){
+      let item;
+    var add_button = $(".form-check-input");
+    $(add_button).click(function(e){
+        var texts =[];
+
+        $('.form-check-input:checked').each(function(){
+            texts.push($(this).val())
+        })
+        localStorage.setItem("data",jtexts)
+})
+console.log(localStorage.getItem("data"))
+});  
+
+</script>
+
+

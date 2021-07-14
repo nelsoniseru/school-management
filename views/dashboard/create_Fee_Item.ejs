@@ -1,0 +1,154 @@
+<form class="form" action="/items" method="POST">
+    <div class="container">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Item</label>
+              <input type="text" class="form-control" id="inputCity" name="school_fee">
+            </div>
+           
+            <div class="form-group col-md-2">
+              <label for="inputZip">Amount</label>
+              <input type="number" class="form-control" id="inputZip" name="school_fee_amount">
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputCity" name="bus_fee_to_and_fro">
+            </div>
+           
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" id="inputZip" name="bus_fee_to_and_fro_amount">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputCity" name="bus_fee_one_way">
+            </div>
+           
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" id="inputZip" name="bus_fee_one_way_amount">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputCity" name="boarding_fee">
+            </div>
+           
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" id="inputZip" name="boarding_fee_amount">
+            </div>
+          </div>
+
+          
+       
+
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputCity" name="waec_fee">
+            </div>
+           
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" id="inputZip" name="waec_fee_amount">
+            </div>
+          </div>
+
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputCity" name="graduation">
+            </div>
+           
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" id="inputZip" name="graduation_amount">
+            </div>
+          </div>
+    </div>
+    <button>submit</button>
+</form>
+
+
+<!-- <form class="form">
+    <div class="container">
+        <div class="input_fields_wrap">
+            <a href="#" class="add_field">Add More Fields</a>
+        </div>
+    </div>
+    <button>submit</button>
+</form>
+
+
+<script>
+
+$(document).ready(function(){
+        var max_fields =  100
+        var wrapper = $(".input_fields_wrap");
+        var add_button = $(".add_field");
+        var x = 1;
+        let res;
+        let el 
+
+    $(add_button).click(function(e){
+        e.preventDefault();
+        x++
+        if(x < max_fields)
+         el = `
+         <div class="form-row" style="margin-bottom:5px">
+      <div class="col">
+        <input type="text" class="form-control inputform" placeholder="" name="mytext[]">
+      </div>
+      <div class="col">
+        <input type="number" class="form-control inputform" placeholder="" name="myprice[]" style="width:10em">
+      </div>
+        <a href="#" class="remove_field">Remove</a>
+     
+    </div>
+            
+            `
+         $(wrapper).append(el)
+     
+        
+        })
+
+
+        $(wrapper).on('click','.remove_field',function(e){
+            e.preventDefault();
+            $(this).parent('div').remove()
+        })
+
+        var form = $(".form")
+    form.bind('submit',async function(e){
+        e.preventDefault();
+        var k ="The respective values are :"
+        var input =$('input[name="mytext[]')
+        var inputwo =$('input[name="myprice[]')
+         let mytext={}
+
+        for (var i = 0; i < input.length; i++) {
+                var a = input[i];
+                var b = inputwo[i]
+                let one = "valueOne"+i
+               let two = "valueTwo"+i
+               mytext["mytext"+i]={one:a.value,two:b.value}
+            }
+            
+        
+       try{
+          const res = await fetch('/items',{
+              method:'POST',
+              body:JSON.stringify(mytext),
+              headers:{'Content-Type':'application/json'}
+          })
+       }catch(e){
+    console.log(e)
+       }
+    })
+
+
+
+    })
+
+</script> -->
